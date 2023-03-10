@@ -24,8 +24,8 @@ alert(wordCount);
 // String: credentials
 const firstName = prompt("Будь ласка, введіть ваше ім'я:");
 const lastName = prompt("Будь ласка, введіть ваше прізвище:");
-const patronymic = prompt("Будь ласка, введіть ваше по-батькові:");
-const fullName =${firstName.trim().capitalize()} ${lastName.trim().capitalize()} ${patronymic.trim().capitalize()};
+const fatherName = prompt("Будь ласка, введіть ваше по-батькові:");
+const fullName =${firstName.trim().capitalize()} ${lastName.trim().capitalize()} ${fatherName.trim().capitalize()};
 alert(fullName);
 
 // String: beer
@@ -49,8 +49,8 @@ console.log(stringWithoutTag);
 
 // String: new line
 const inputString = prompt('Введіть рядок:');
-const multiLineString = inputString.split('\\n').join('\n');
-alert(multiLineString);
+const fullString = inputString.split('\\n').join('\n');
+alert(fullString);
 
 
 // String: youtube
