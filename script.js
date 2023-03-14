@@ -6,9 +6,8 @@ alert(Привіт, ${ userName }!Велкам на мій сайт);
 
 // String: gopni4ek
 let str = prompt("Введіть рядок:");
-let str2 = str.split(","); 
-let newStr = str2.join(", блін,");
-alert(newStr + ", блін!");
+let str2 = str.split(",").join("блін,"); 
+alert(str2);
 
 // String: capitalize
 let inputString = prompt("Введіть рядок:");
