@@ -148,3 +148,18 @@ const cat = {
 };
 const { name, ...catCopy } = cat;
 console.log(catCopy);
+
+// Currency real rate
+fetch('https://open.er-api.com/v6/latest/USD').then(res => res.json())
+     .then(data => {
+    const currencies = data.rates;
+    const inputCurrency = prompt('Введіть вхідну валюту:').toUpperCase();
+    const outputCurrency = prompt('Введіть валюту, в яку відбувається конвертація:').toUpperCase();
+    const amount = prompt('Введіть суму:');
+    if (!currencies[inputCurrency] || !currencies[outputCurrency]) {
+      alert('Одна валюта не вірна!');
+    } else {
+      const result = (amount / currencies[inputCurrency]) * currencies[outputCurrency];
+      alert(`${amount} ${inputCurrency} = ${result} ${outputCurrency}`);
+    }
+  });
