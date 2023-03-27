@@ -152,7 +152,7 @@ console.log(catCopy);
 // Currency real rate
 fetch('https://open.er-api.com/v6/latest/USD').then(res => res.json())
      .then(data => {
-    const currencies = data.rates;
+    const currencies = data.rate;
     const inputCurrency = prompt('Введіть вхідну валюту:').toUpperCase();
     const outputCurrency = prompt('Введіть валюту, в яку відбувається конвертація:').toUpperCase();
     const amount = prompt('Введіть суму:');
