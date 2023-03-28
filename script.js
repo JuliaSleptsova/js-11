@@ -85,6 +85,18 @@ function goodWords(str, badWords) {
 }
 console.log(filteredString);
 
+// Flats
+function flat() {
+  const floors = parseInt(prompt("Введіть кількість поверхів у будинку:"));
+  const flatsPerFloor = parseInt(prompt("Введіть кількість квартир на поверсі:"));
+  const flatNumber = parseInt(prompt("Введіть номер квартири:"));
+  const floor = Math.ceil(flatNumber / flatsPerFloor);
+  const entrance = Math.ceil(floor / (floors));
+ 
+  return `${flatNumber} квартира ${entrance} під'їзд ${floor} поверх`;
+}
+flat();
+
 // Array of objects sort
 const persons = [
     {name: "Іван", age: 17},
