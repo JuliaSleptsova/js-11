@@ -164,4 +164,15 @@ fetch('https://open.er-api.com/v6/latest/USD').then(res => res.json())
       const result = (amount / currencies[inputCurrency]) * currencies[outputCurrency];
       alert(`${amount} ${inputCurrency} = ${result} ${outputCurrency}`);
     }
+     });
+  
+     // Currency drop down 
+fetch("https://open.er-api.com/v6/latest/USD").then((res) => res.json())
+  .then((data) => {
+    let str = <select>;
+    for (const key in data.rates) {
+      str += <option value = "${key}">${key}</option>;
+    }
+    str += </select>;
+    document.write(str);
   });
