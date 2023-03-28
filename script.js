@@ -129,3 +129,31 @@ const averageAge = arr.reduce(function (accumulator, currentValue) {
     return accumulator + currentValue.age;
 }, 0);
 console.log(averageAge / arr.length);
+
+// for Table
+const arr = [
+  [0, 0, 0, 0, 0],
+  [0, 1, 2, 3, 4],
+  [0, 2, 4, 6, 8],
+  [0, 3, 6, 9, 12],
+  [0, 4, 8, 12, 16],
+];
+function table(array) {
+  let str = `<table style = "width: 120px">`;
+  for (let i of array) {
+    str += `<tr>`;
+    for (let j of i) {
+      if (arr.indexOf(i) === 0) {
+        str += `<th style = "background: white">${j}</th>`;
+      } else if (j % 2 === 0 && j > 0) {
+        str += `<td style = "background: yellow">${j}</td>`;
+      } else {
+        str += `<td style = "background: blue">${j}</td>`;
+      }
+    }
+    str += `</tr>`;
+  }
+  str += "</table>";
+  return document.write(str);
+}
+table(arr);
