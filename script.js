@@ -118,7 +118,7 @@ const sortPersonsByName = persons.sort(function (a, b) {
 });
 console.log(sortPersonsByName);
 
-// Calc Func
+// Calc Func не зрозуміла шо тут нада робити
 const arr = [
   {name: "Іван", age: 17},
     {name: "Марія", age: 35},
