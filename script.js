@@ -176,6 +176,7 @@ function personForm(parent, person) {
   nameInput.oninput = () => {
     person.setName(nameInput.value);
     nameInput.value = person.getName();
+    fullNameInput.value = person.getFullName();
   };
   
   const surnameInput = document.createElement("input");
@@ -184,6 +185,7 @@ function personForm(parent, person) {
   surnameInput.oninput = () => {
     person.setSurname(surnameInput.value);
     surnameInput.value = person.getSurname();
+    fullNameInput.value = person.getFullName();
   };
   
   const fatherNameInput = document.createElement("input");
@@ -192,6 +194,7 @@ function personForm(parent, person) {
   fatherNameInput.oninput = () => {
     person.setFatherName(fatherNameInput.value);
     fatherNameInput.value = person.getFatherName();
+    fullNameInput.value = person.getFullName();
   };
   
   const ageInput = document.createElement("input");
@@ -208,6 +211,10 @@ function personForm(parent, person) {
   fullNameInput.oninput = () => {
     person.setFullName(fullNameInput.value);
     fullNameInput.value = person.getFullName();
+    fatherNameInput.value = person.getFatherName();
+    surnameInput.value = person.getSurname();
+    nameInput.value = person.getName();
+
   };
   
   parent.appendChild(nameInput);
