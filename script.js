@@ -164,6 +164,60 @@ console.log(arr);
 console.log(isSorted(...arr));
 
 // personForm
+const div = document.getElementById("div");
+const test = createPersonClosure();
+test.setAge(19);
+test.setFullName("Слєпцова Юля Олегівна");
+
+function personForm(parent, person) {
+  const nameInput = document.createElement("input");
+  nameInput.type = "text";
+  nameInput.value = person.getName();
+  nameInput.oninput = () => {
+    person.setName(nameInput.value);
+    nameInput.value = person.getName();
+  };
+  
+  const surnameInput = document.createElement("input");
+  surnameInput.type = "text";
+  surnameInput.value = person.getSurname();
+  surnameInput.oninput = () => {
+    person.setSurname(surnameInput.value);
+    surnameInput.value = person.getSurname();
+  };
+  
+  const fatherNameInput = document.createElement("input");
+  fatherNameInput.type = "text";
+  fatherNameInput.value = person.getFatherName();
+  fatherNameInput.oninput = () => {
+    person.setFatherName(fatherNameInput.value);
+    fatherNameInput.value = person.getFatherName();
+  };
+  
+  const ageInput = document.createElement("input");
+  ageInput.type = "number";
+  ageInput.value = person.getAge();
+  ageInput.oninput = () => {
+    person.setAge(parseInt(ageInput.value));
+    ageInput.value = person.getAge();
+  };
+  
+  const fullNameInput = document.createElement("input");
+  fullNameInput.type = "text";
+  fullNameInput.value = person.getFullName();
+  fullNameInput.oninput = () => {
+    person.setFullName(fullNameInput.value);
+    fullNameInput.value = person.getFullName();
+  };
+  
+  parent.appendChild(nameInput);
+  parent.appendChild(surnameInput);
+  parent.appendChild(fatherNameInput);
+  parent.appendChild(ageInput);
+  parent.appendChild(fullNameInput);
+}
+
+personForm(div, test)
 
 // getSetForm
 
