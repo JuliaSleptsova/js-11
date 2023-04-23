@@ -48,57 +48,76 @@ function Password(parent, open) {
   input.type = "password";
   parent.append(input);
 
-  const toggleBth = document.createElement("button");
-  toggleBth.innerText = "Open";
-  parent.append(toggleBth);
+  const toggleBtn = document.createElement("button");
+  toggleBtn.innerText = "Show";
+  parent.append(toggleBtn);
 
-  value = "";
-  isOpen = open;
+  let value = "";
+  let isOpen = open;
 
   this.setValue = (newValue) => {
     value = newValue;
     input.value = value;
   };
+
   this.getValue = () => {
     return input.value;
   };
+
   this.setOpen = (newOpen) => {
     isOpen = newOpen;
     if (isOpen) {
-      toggleBth.innerText = "Hide";
+      toggleBtn.innerText = "Hide";
       input.type = "text";
     } else {
-      toggleBth.innerText = "open";
+      toggleBtn.innerText = "Show";
       input.type = "password";
     }
-    this.getOpen = () => {
-      return isOpen;
-    };
   };
+
+  this.getOpen = () => {
+    return isOpen;
+  };
+
   input.oninput = () => {
     value = input.value;
     this.onChange(value);
   };
-  toggleBth.onclick = () => {
+
+  toggleBtn.onclick = () => {
     isOpen = !isOpen;
     if (isOpen) {
-      toggleBth.innerText = "hide";
+      toggleBtn.innerText = "Hide";
       input.type = "text";
     } else {
-      toggleBth.innerText = "open";
+      toggleBtn.innerText = "Show";
       input.type = "password";
     }
     this.onOpenChange(isOpen);
   };
 }
 
-let p = new Password(document.body, true);
+const usernameInput = document.createElement('input');
+const passwordInput = new Password(document.body, true);
 
-p.onChange = (data) => console.log(data); 
-p.onOpenChange = (open) => console.log(open);
+const loginButton = document.createElement('button');
+loginButton.innerText = 'Log in';
 
-p.setValue("qwerty");
-console.log(p.getValue());
+const loginForm = document.createElement('form');
+loginForm.appendChild(usernameInput);
+loginForm.appendChild(passwordInput);
+loginForm.appendChild(loginButton);
 
-p.setOpen(false);
-console.log(p.getOpen());
+document.body.appendChild(loginForm);
+
+passwordInput.onChange = (data) => console.log(data); 
+passwordInput.onOpenChange = (open) => console.log(open);
+
+passwordInput.setValue("qwerty");
+console.log(passwordInput.getValue());
+
+passwordInput.setOpen(false);
+console.log(passwordInput.getOpen());
+
+// LoginForm Constructor
+// Password Verify
